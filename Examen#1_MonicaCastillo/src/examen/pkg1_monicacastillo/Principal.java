@@ -7,6 +7,7 @@ package examen.pkg1_monicacastillo;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
 
@@ -163,6 +164,10 @@ public class Principal extends javax.swing.JFrame {
         AgregarObjeto = new javax.swing.JButton();
         PanelModificar = new javax.swing.JPanel();
         PanelEliminar = new javax.swing.JPanel();
+        EliminarPersonaCB = new javax.swing.JComboBox<>();
+        EliminarObjeto = new javax.swing.JComboBox<>();
+        jLabel55 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
         PanelMensajes = new javax.swing.JPanel();
         PanelListar = new javax.swing.JPanel();
 
@@ -539,8 +544,6 @@ public class Principal extends javax.swing.JFrame {
 
         CalidadZapato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Excelente", "Buena", "Mas o Menos", "Mala", "Pesima" }));
 
-        PersonaZapato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         TallaZapato.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
 
         SuelaDescripcionZapato.setColumns(20);
@@ -597,8 +600,6 @@ public class Principal extends javax.swing.JFrame {
 
         CalidadRopa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Excelente", "Buena", "Mas o Menos", "Mala", "Pesima" }));
 
-        PersonaRopa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         TallaRopa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Talla S", "Talla M", "Talla G" }));
 
         AgregarRopa.setText("Agregar Ropa");
@@ -648,8 +649,6 @@ public class Principal extends javax.swing.JFrame {
         TamañoHogar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pequeño", "Mediano", "Grande" }));
 
         CalidadHogar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Excelente", "Buena", "Mas o Menos", "Mala", "Pesima" }));
-
-        PersonaHogar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         UbicacionHogar.setColumns(20);
         UbicacionHogar.setRows(5);
@@ -961,15 +960,54 @@ public class Principal extends javax.swing.JFrame {
 
         PanelesOpciones.addTab("Modificar", PanelModificar);
 
+        EliminarPersonaCB.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                EliminarPersonaCBItemStateChanged(evt);
+            }
+        });
+
+        EliminarObjeto.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                EliminarObjetoItemStateChanged(evt);
+            }
+        });
+
+        jLabel55.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel55.setText("Eliminar Persona");
+
+        jLabel56.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel56.setText("Eliminar Objeto");
+
         javax.swing.GroupLayout PanelEliminarLayout = new javax.swing.GroupLayout(PanelEliminar);
         PanelEliminar.setLayout(PanelEliminarLayout);
         PanelEliminarLayout.setHorizontalGroup(
             PanelEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 536, Short.MAX_VALUE)
+            .addGroup(PanelEliminarLayout.createSequentialGroup()
+                .addGroup(PanelEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelEliminarLayout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(jLabel55))
+                    .addGroup(PanelEliminarLayout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(EliminarPersonaCB, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(85, 85, 85)
+                .addGroup(PanelEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(EliminarObjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel56))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         PanelEliminarLayout.setVerticalGroup(
             PanelEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 341, Short.MAX_VALUE)
+            .addGroup(PanelEliminarLayout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addGroup(PanelEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel55)
+                    .addComponent(jLabel56))
+                .addGap(42, 42, 42)
+                .addGroup(PanelEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EliminarPersonaCB, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EliminarObjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(162, Short.MAX_VALUE))
         );
 
         PanelesOpciones.addTab("Eliminar", PanelEliminar);
@@ -1066,6 +1104,18 @@ public class Principal extends javax.swing.JFrame {
                 contraseña = JOptionPane.showInputDialog("Ingrese la contraseña para poder agregar un gerente: ");
             } // Fin While Contraseña
             personas.add(new Gerente(usuario, contraseña, cargo, ID, nombre, edad, sexo, estadocivil, altura, peso));
+            DefaultComboBoxModel ph = (DefaultComboBoxModel) PersonaHogar.getModel();
+            DefaultComboBoxModel pr = (DefaultComboBoxModel) PersonaRopa.getModel();
+            DefaultComboBoxModel pz = (DefaultComboBoxModel) PersonaZapato.getModel();
+            DefaultComboBoxModel ep = (DefaultComboBoxModel) EliminarPersonaCB.getModel();
+            ph.addElement(new Gerente(usuario, contraseña, cargo, ID, nombre, edad, sexo, estadocivil, altura, peso));
+            pr.addElement(new Gerente(usuario, contraseña, cargo, ID, nombre, edad, sexo, estadocivil, altura, peso));
+            pz.addElement(new Gerente(usuario, contraseña, cargo, ID, nombre, edad, sexo, estadocivil, altura, peso));
+            ep.addElement(new Gerente(usuario, contraseña, cargo, ID, nombre, edad, sexo, estadocivil, altura, peso));
+            PersonaHogar.setModel(ph);
+            PersonaRopa.setModel(pr);
+            PersonaZapato.setModel(pz);
+            EliminarPersonaCB.setModel(ep);
             JOptionPane.showMessageDialog(this, "¡Gerente Agregado Exitosamente!");
             AgregarPersonaFrame.setVisible(false);
             this.setVisible(true);
@@ -1102,6 +1152,18 @@ public class Principal extends javax.swing.JFrame {
                 contraseña = JOptionPane.showInputDialog("Ingrese la contraseña para poder agregar un personal: ");
             } // Fin While Contraseña
             personas.add(new PersonalGeneral(ocupacion, horario, tiemposemanas, sueldo, ID, nombre, edad, sexo, estadocivil, altura, peso));
+            DefaultComboBoxModel ph = (DefaultComboBoxModel) PersonaHogar.getModel();
+            DefaultComboBoxModel pr = (DefaultComboBoxModel) PersonaRopa.getModel();
+            DefaultComboBoxModel pz = (DefaultComboBoxModel) PersonaZapato.getModel();
+            DefaultComboBoxModel ep = (DefaultComboBoxModel) EliminarPersonaCB.getModel();
+            ph.addElement(new PersonalGeneral(ocupacion, horario, tiemposemanas, sueldo, ID, nombre, edad, sexo, estadocivil, altura, peso));
+            pr.addElement(new PersonalGeneral(ocupacion, horario, tiemposemanas, sueldo, ID, nombre, edad, sexo, estadocivil, altura, peso));
+            pz.addElement(new PersonalGeneral(ocupacion, horario, tiemposemanas, sueldo, ID, nombre, edad, sexo, estadocivil, altura, peso));
+            ep.addElement(new PersonalGeneral(ocupacion, horario, tiemposemanas, sueldo, ID, nombre, edad, sexo, estadocivil, altura, peso));
+            PersonaHogar.setModel(ph);
+            PersonaRopa.setModel(pr);
+            PersonaZapato.setModel(pz);
+            EliminarPersonaCB.setModel(ep);
             JOptionPane.showMessageDialog(this, "¡Personal General Agregado Exitosamente!");
             AgregarPersonaFrame.setVisible(false);
             this.setVisible(true);
@@ -1134,6 +1196,9 @@ public class Principal extends javax.swing.JFrame {
                 contraseña = JOptionPane.showInputDialog("Ingrese la contraseña para poder agregar un zapato: ");
             } // Fin While Contraseña
             objetos.add(new Zapato(talla, descsuela, comodidad, color, descripcion, marca, tamaño, calidad, persona));
+            DefaultComboBoxModel ep = (DefaultComboBoxModel) EliminarObjeto.getModel();
+            ep.addElement(new Zapato(talla, descsuela, comodidad, color, descripcion, marca, tamaño, calidad, persona));
+            EliminarObjeto.setModel(ep);
             JOptionPane.showMessageDialog(this, "¡Zapato Agregado Exitosamente!");
             AgregarObjetoFrame.setVisible(false);
             this.setVisible(true);
@@ -1164,6 +1229,9 @@ public class Principal extends javax.swing.JFrame {
                 contraseña = JOptionPane.showInputDialog("Ingrese la contraseña para poder agregar una ropa: ");
             } // Fin While Contraseña
             objetos.add(new Ropa(talla, tela, pais, color, descripcion, marca, tamaño, calidad, persona));
+            DefaultComboBoxModel ep = (DefaultComboBoxModel) EliminarObjeto.getModel();
+            ep.addElement(new Ropa(talla, tela, pais, color, descripcion, marca, tamaño, calidad, persona));
+            EliminarObjeto.setModel(ep);
             JOptionPane.showMessageDialog(this, "¡Ropa Agregada Exitosamente!");
             AgregarObjetoFrame.setVisible(false);
             this.setVisible(true);
@@ -1194,6 +1262,9 @@ public class Principal extends javax.swing.JFrame {
                 contraseña = JOptionPane.showInputDialog("Ingrese la contraseña para poder agregar un objeto de hogar: ");
             } // Fin While Contraseña
             objetos.add(new ObjetoDeHogar(descubicacion, instrucciones, garantia, color, descripcion, marca, tamaño, calidad, persona));
+            DefaultComboBoxModel ep = (DefaultComboBoxModel) EliminarObjeto.getModel();
+            ep.addElement(new ObjetoDeHogar(descubicacion, instrucciones, garantia, color, descripcion, marca, tamaño, calidad, persona));
+            EliminarObjeto.setModel(ep);
             JOptionPane.showMessageDialog(this, "¡Objeto de Hogar Agregado Exitosamente!");
             AgregarObjetoFrame.setVisible(false);
             this.setVisible(true);
@@ -1217,6 +1288,46 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         ColorHogar.setBackground(JColorChooser.showDialog(this, "Seleccione un color: ", Color.yellow));
     }//GEN-LAST:event_ColorHogarMouseClicked
+
+    private void EliminarPersonaCBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_EliminarPersonaCBItemStateChanged
+        // TODO add your handling code here:
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel) EliminarPersonaCB.getModel();
+        try {
+            String contraseña;
+            contraseña = JOptionPane.showInputDialog("Ingrese la contraseña para poder eliminar una persona: ");
+            while (!contraseña.equals("unitec1234")) {
+                JOptionPane.showMessageDialog(this, "¡Contraseña Incorrecta!");
+                contraseña = JOptionPane.showInputDialog("Ingrese la contraseña para poder eliminar una persona: ");
+            } // Fin While Contraseña
+            modelo.removeElementAt(EliminarPersonaCB.getSelectedIndex());
+            personas.remove(EliminarPersonaCB.getSelectedIndex());
+            EliminarPersonaCB.setModel(modelo);
+            JOptionPane.showMessageDialog(this, "¡Persona Eliminada Exitosamente!");
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "¡Ocurrio un error y no se guardaron los datos!");
+        }
+    }//GEN-LAST:event_EliminarPersonaCBItemStateChanged
+
+    private void EliminarObjetoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_EliminarObjetoItemStateChanged
+        // TODO add your handling code here:
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel) EliminarObjeto.getModel();
+        String contraseña;
+        try {
+            contraseña = JOptionPane.showInputDialog("Ingrese la contraseña para poder eliminar un objeto: ");
+            while (!contraseña.equals("unitec1234")) {
+                JOptionPane.showMessageDialog(this, "¡Contraseña Incorrecta!");
+                contraseña = JOptionPane.showInputDialog("Ingrese la contraseña para poder eliminar un objeto: ");
+            } // Fin While Contraseña
+            modelo.removeElementAt(EliminarObjeto.getSelectedIndex());
+            objetos.remove(EliminarObjeto.getSelectedIndex());
+            EliminarObjeto.setModel(modelo);
+            JOptionPane.showMessageDialog(this, "¡Objeto Eliminado Exitosamente!");
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "¡Ocurrio un error y no se guardaron los datos!");
+        }
+    }//GEN-LAST:event_EliminarObjetoItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -1278,6 +1389,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextArea DescripcionZapato;
     private javax.swing.JFormattedTextField EdadGerente;
     private javax.swing.JFormattedTextField EdadPersonal;
+    private javax.swing.JComboBox<String> EliminarObjeto;
+    private javax.swing.JComboBox<String> EliminarPersonaCB;
     private javax.swing.JComboBox<String> EstadoCivilGerente;
     private javax.swing.JComboBox<String> EstadoCivilPersonal;
     private javax.swing.JRadioButton FemeninoGerente;
@@ -1373,6 +1486,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
