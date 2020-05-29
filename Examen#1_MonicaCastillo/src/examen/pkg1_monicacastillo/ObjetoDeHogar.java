@@ -5,6 +5,7 @@
  */
 package examen.pkg1_monicacastillo;
 
+import java.awt.Color;
 import java.util.Date;
 
 /**
@@ -15,13 +16,14 @@ public class ObjetoDeHogar extends Objeto {
 
     private String descripcion;
     private String instrucciones;
-    private Date garantia;
+    private String garantia;
 
     public ObjetoDeHogar() {
         super();
     }
 
-    public ObjetoDeHogar(String descripcion, String instrucciones, Date garantia) {
+    public ObjetoDeHogar(String descripcion, String instrucciones, String garantia, Color color, String direccion, String marca, String tamaño, String calidad, Persona persona) {
+        super(color, direccion, marca, tamaño, calidad, persona);
         this.descripcion = descripcion;
         this.instrucciones = instrucciones;
         this.garantia = garantia;
@@ -43,11 +45,11 @@ public class ObjetoDeHogar extends Objeto {
         this.instrucciones = instrucciones;
     }
 
-    public Date getGarantia() {
+    public String getGarantia() {
         return garantia;
     }
 
-    public void setGarantia(Date garantia) {
+    public void setGarantia(String garantia) {
         this.garantia = garantia;
     }
 

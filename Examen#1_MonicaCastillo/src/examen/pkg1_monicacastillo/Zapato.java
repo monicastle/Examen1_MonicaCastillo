@@ -5,6 +5,8 @@
  */
 package examen.pkg1_monicacastillo;
 
+import java.awt.Color;
+
 /**
  *
  * @author Monica
@@ -17,6 +19,13 @@ public class Zapato extends Objeto {
 
     public Zapato() {
         super();
+    }
+
+    public Zapato(double talla, String descripcion, int comodidad, Color color, String direccion, String marca, String tamaño, String calidad, Persona persona) {
+        super(color, direccion, marca, tamaño, calidad, persona);
+        this.talla = talla;
+        this.descripcion = descripcion;
+        this.comodidad = comodidad;
     }
 
     public double getTalla() {
