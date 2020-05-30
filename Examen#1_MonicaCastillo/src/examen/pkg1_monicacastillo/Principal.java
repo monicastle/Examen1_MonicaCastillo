@@ -186,14 +186,14 @@ public class Principal extends javax.swing.JFrame {
         jLabel76 = new javax.swing.JLabel();
         jLabel77 = new javax.swing.JLabel();
         jLabel78 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        CBModificarObjeto = new javax.swing.JComboBox<>();
+        ColorObjetoModificado = new javax.swing.JButton();
         jScrollPane11 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        DescripcionObjetoModificado = new javax.swing.JTextArea();
+        MarcaObjetoModificado = new javax.swing.JTextField();
+        TamañoObjetoModificado = new javax.swing.JComboBox<>();
+        CalidadObjetoModificado = new javax.swing.JComboBox<>();
+        PersonaObjetoCBModificado = new javax.swing.JComboBox<>();
         ModificarObjeto2 = new javax.swing.JButton();
         buttonGroup4 = new javax.swing.ButtonGroup();
         buttonGroup5 = new javax.swing.ButtonGroup();
@@ -1110,13 +1110,13 @@ public class Principal extends javax.swing.JFrame {
         jLabel78.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel78.setText("Calidad:");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane11.setViewportView(jTextArea1);
+        DescripcionObjetoModificado.setColumns(20);
+        DescripcionObjetoModificado.setRows(5);
+        jScrollPane11.setViewportView(DescripcionObjetoModificado);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pequeño", "Mediano", "Grande" }));
+        TamañoObjetoModificado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pequeño", "Mediano", "Grande" }));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Excelente", "Buena", "Mas o Menos", "Mala", "Pesima" }));
+        CalidadObjetoModificado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Excelente", "Buena", "Mas o Menos", "Mala", "Pesima" }));
 
         ModificarObjeto2.setText("ModificarObjeto");
         ModificarObjeto2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1136,7 +1136,7 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(jLabel72))
                     .addGroup(ModificarObjetoFrameLayout.createSequentialGroup()
                         .addGap(114, 114, 114)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(CBModificarObjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(ModificarObjetoFrameLayout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addGroup(ModificarObjetoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1155,14 +1155,14 @@ public class Principal extends javax.swing.JFrame {
                                     .addGroup(ModificarObjetoFrameLayout.createSequentialGroup()
                                         .addGap(10, 10, 10)
                                         .addGroup(ModificarObjetoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jTextField1)
-                                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jComboBox3, 0, 166, Short.MAX_VALUE)))))
+                                            .addComponent(PersonaObjetoCBModificado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(MarcaObjetoModificado)
+                                            .addComponent(TamañoObjetoModificado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(CalidadObjetoModificado, 0, 166, Short.MAX_VALUE)))))
                             .addGroup(ModificarObjetoFrameLayout.createSequentialGroup()
                                 .addComponent(jLabel73)
                                 .addGap(47, 47, 47)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(ColorObjetoModificado, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(ModificarObjetoFrameLayout.createSequentialGroup()
                         .addGap(122, 122, 122)
                         .addComponent(ModificarObjeto2)))
@@ -1174,10 +1174,10 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel72)
                 .addGap(18, 18, 18)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CBModificarObjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(ModificarObjetoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ColorObjetoModificado, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel73))
                 .addGroup(ModificarObjetoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ModificarObjetoFrameLayout.createSequentialGroup()
@@ -1189,19 +1189,19 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(ModificarObjetoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel75)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(MarcaObjetoModificado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(ModificarObjetoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel76)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TamañoObjetoModificado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(ModificarObjetoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel78)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CalidadObjetoModificado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(ModificarObjetoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel77)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PersonaObjetoCBModificado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addComponent(ModificarObjeto2)
                 .addContainerGap())
@@ -1752,12 +1752,18 @@ public class Principal extends javax.swing.JFrame {
             DefaultComboBoxModel ep = (DefaultComboBoxModel) EliminarObjeto.getModel();
             DefaultComboBoxModel emi = (DefaultComboBoxModel) EmisorCb.getModel();
             DefaultComboBoxModel recep = (DefaultComboBoxModel) ReceptorCb.getModel();
+            DefaultComboBoxModel modo = (DefaultComboBoxModel) CBModificarObjeto.getModel();
+            DefaultComboBoxModel pero = (DefaultComboBoxModel) PersonaObjetoCBModificado.getModel();
             ep.addElement(new Zapato(talla, descsuela, comodidad, color, descripcion, marca, tamaño, calidad, persona));
             emi.addElement(new Zapato(talla, descsuela, comodidad, color, descripcion, marca, tamaño, calidad, persona));
             recep.addElement(new Zapato(talla, descsuela, comodidad, color, descripcion, marca, tamaño, calidad, persona));
+            modo.addElement(new Zapato(talla, descsuela, comodidad, color, descripcion, marca, tamaño, calidad, persona));
+            pero.addElement(new Zapato(talla, descsuela, comodidad, color, descripcion, marca, tamaño, calidad, persona));
             EliminarObjeto.setModel(ep);
             EmisorCb.setModel(emi);
             ReceptorCb.setModel(recep);
+            CBModificarObjeto.setModel(modo);
+            PersonaObjetoCBModificado.setModel(pero);
             JOptionPane.showMessageDialog(this, "¡Zapato Agregado Exitosamente!");
             String[] newrow = {marca, tamaño, calidad, "Zapato"};
             DefaultTableModel modelo = (DefaultTableModel) TablaObjetos.getModel();
@@ -1795,12 +1801,18 @@ public class Principal extends javax.swing.JFrame {
             DefaultComboBoxModel ep = (DefaultComboBoxModel) EliminarObjeto.getModel();
             DefaultComboBoxModel emi = (DefaultComboBoxModel) EmisorCb.getModel();
             DefaultComboBoxModel recep = (DefaultComboBoxModel) ReceptorCb.getModel();
+            DefaultComboBoxModel modo = (DefaultComboBoxModel) CBModificarObjeto.getModel();
+            DefaultComboBoxModel pero = (DefaultComboBoxModel) PersonaObjetoCBModificado.getModel();
             ep.addElement(new Ropa(talla, tela, pais, color, descripcion, marca, tamaño, calidad, persona));
             emi.addElement(new Ropa(talla, tela, pais, color, descripcion, marca, tamaño, calidad, persona));
             recep.addElement(new Ropa(talla, tela, pais, color, descripcion, marca, tamaño, calidad, persona));
+            modo.addElement(new Ropa(talla, tela, pais, color, descripcion, marca, tamaño, calidad, persona));
+            pero.addElement(new Ropa(talla, tela, pais, color, descripcion, marca, tamaño, calidad, persona));
             EliminarObjeto.setModel(ep);
             EmisorCb.setModel(emi);
             ReceptorCb.setModel(recep);
+            CBModificarObjeto.setModel(modo);
+            PersonaObjetoCBModificado.setModel(pero);
             JOptionPane.showMessageDialog(this, "¡Ropa Agregada Exitosamente!");
             String[] newrow = {marca, tamaño, calidad, "Ropa"};
             DefaultTableModel modelo = (DefaultTableModel) TablaObjetos.getModel();
@@ -1838,12 +1850,18 @@ public class Principal extends javax.swing.JFrame {
             DefaultComboBoxModel ep = (DefaultComboBoxModel) EliminarObjeto.getModel();
             DefaultComboBoxModel emi = (DefaultComboBoxModel) EmisorCb.getModel();
             DefaultComboBoxModel recep = (DefaultComboBoxModel) ReceptorCb.getModel();
+            DefaultComboBoxModel modo = (DefaultComboBoxModel) CBModificarObjeto.getModel();
+            DefaultComboBoxModel pero = (DefaultComboBoxModel) PersonaObjetoCBModificado.getModel();
             ep.addElement(new ObjetoDeHogar(descubicacion, instrucciones, garantia, color, descripcion, marca, tamaño, calidad, persona));
             emi.addElement(new ObjetoDeHogar(descubicacion, instrucciones, garantia, color, descripcion, marca, tamaño, calidad, persona));
             recep.addElement(new ObjetoDeHogar(descubicacion, instrucciones, garantia, color, descripcion, marca, tamaño, calidad, persona));
+            modo.addElement(new ObjetoDeHogar(descubicacion, instrucciones, garantia, color, descripcion, marca, tamaño, calidad, persona));
+            pero.addElement(new ObjetoDeHogar(descubicacion, instrucciones, garantia, color, descripcion, marca, tamaño, calidad, persona));
             EliminarObjeto.setModel(ep);
             EmisorCb.setModel(emi);
             ReceptorCb.setModel(recep);
+            CBModificarObjeto.setModel(modo);
+            PersonaObjetoCBModificado.setModel(pero);
             JOptionPane.showMessageDialog(this, "¡Objeto de Hogar Agregado Exitosamente!");
             String[] newrow = {marca, tamaño, calidad, "Hogar"};
             DefaultTableModel modelo = (DefaultTableModel) TablaObjetos.getModel();
@@ -1875,8 +1893,8 @@ public class Principal extends javax.swing.JFrame {
     private void EliminarPersonaCBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_EliminarPersonaCBItemStateChanged
         // TODO add your handling code here:
         DefaultComboBoxModel modelo = (DefaultComboBoxModel) EliminarPersonaCB.getModel();
+        String contraseña;
         try {
-            String contraseña;
             contraseña = JOptionPane.showInputDialog("Ingrese la contraseña para poder eliminar una persona: ");
             while (!contraseña.equals("unitec1234")) {
                 JOptionPane.showMessageDialog(this, "¡Contraseña Incorrecta!");
@@ -1958,8 +1976,20 @@ public class Principal extends javax.swing.JFrame {
         ModificarPersonaFrame.setVisible(true);
         ModificarPersonaFrame.setLocationRelativeTo(null);
         this.setVisible(false);
+    }//GEN-LAST:event_ModificarPersonaMouseClicked
+
+    private void ModificarObjetoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ModificarObjetoMouseClicked
+        // TODO add your handling code here:
+        ModificarObjetoFrame.pack();
+        ModificarObjetoFrame.setVisible(true);
+        ModificarObjetoFrame.setLocationRelativeTo(null);
+        this.setVisible(false);
+    }//GEN-LAST:event_ModificarObjetoMouseClicked
+
+    private void ModificarPersona2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ModificarPersona2MouseClicked
+        // TODO add your handling code here:
         int ID, edad;
-        String nombre = "", sexo = "", estadocivil = "";
+        String nombre = "", sexo = "", estadocivil = "", contraseña;
         double altura, peso;
         try {
             ID = Integer.parseInt(IDPersonaModificado.getText());
@@ -1973,29 +2003,46 @@ public class Principal extends javax.swing.JFrame {
             estadocivil = EstadoCivilPersonaModificado.getSelectedItem().toString();
             altura = Double.parseDouble(AlturaPersonaModificado.getText());
             peso = Double.parseDouble(PesoPersonaModificado.getText());
-
-    }//GEN-LAST:event_ModificarPersonaMouseClicked
-
-    private void ModificarObjetoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ModificarObjetoMouseClicked
-        // TODO add your handling code here:
-        ModificarObjetoFrame.pack();
-        ModificarObjetoFrame.setVisible(true);
-        ModificarObjetoFrame.setLocationRelativeTo(null);
-        this.setVisible(false);
-    }//GEN-LAST:event_ModificarObjetoMouseClicked
-
-    private void ModificarPersona2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ModificarPersona2MouseClicked
-        // TODO add your handling code here:
-
-        ModificarPersonaFrame.setVisible(false);
-        this.setVisible(true);
+            contraseña = JOptionPane.showInputDialog("Ingrese la contraseña para poder modificar una persona: ");
+            while (!contraseña.equals("unitec1234")) {
+                JOptionPane.showMessageDialog(this, "¡Contraseña Incorrecta!");
+                contraseña = JOptionPane.showInputDialog("Ingrese la contraseña para poder modificar una persona: ");
+            } // Fin While Contraseña
+            JOptionPane.showMessageDialog(this, "¡Persona Modificada Exitosamente!");
+            ModificarPersonaFrame.setVisible(false);
+            this.setVisible(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "¡Ocurrio un error y no se guardaron los datos!");
+        } // Fin Try Catch
     }//GEN-LAST:event_ModificarPersona2MouseClicked
 
     private void ModificarObjeto2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ModificarObjeto2MouseClicked
         // TODO add your handling code here:
-
-        ModificarObjetoFrame.setVisible(false);
-        this.setVisible(true);
+        Color color;
+        String descripcion, marca, tamaño = "", calidad = "", descsuela, contraseña;
+        Persona persona;
+        try {
+            double talla;
+            int comodidad;
+            color = ColorObjetoModificado.getBackground();
+            descripcion = DescripcionObjetoModificado.getText();
+            marca = MarcaObjetoModificado.getText();
+            tamaño = TamañoObjetoModificado.getSelectedItem().toString();
+            calidad = CalidadObjetoModificado.getSelectedItem().toString();
+            persona = (Persona) PersonaObjetoCBModificado.getSelectedItem();
+            contraseña = JOptionPane.showInputDialog("Ingrese la contraseña para poder modificar un objeto: ");
+            while (!contraseña.equals("unitec1234")) {
+                JOptionPane.showMessageDialog(this, "¡Contraseña Incorrecta!");
+                contraseña = JOptionPane.showInputDialog("Ingrese la contraseña para poder modificar un objeto: ");
+            } // Fin While Contraseña
+            JOptionPane.showMessageDialog(this, "¡Objeto Modificado Exitosamente!");
+            ModificarObjetoFrame.setVisible(false);
+            this.setVisible(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "¡Ocurrio un error y no se guardaron los datos!");
+        } // Fin Try Catch
     }//GEN-LAST:event_ModificarObjeto2MouseClicked
 
     /**
@@ -2046,16 +2093,20 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField AlturaGerente;
     private javax.swing.JFormattedTextField AlturaPersonaModificado;
     private javax.swing.JFormattedTextField AlturaPersonal;
+    private javax.swing.JComboBox<String> CBModificarObjeto;
     private javax.swing.JComboBox<String> CBPersonasModificar;
     private javax.swing.JComboBox<String> CalidadHogar;
+    private javax.swing.JComboBox<String> CalidadObjetoModificado;
     private javax.swing.JComboBox<String> CalidadRopa;
     private javax.swing.JComboBox<String> CalidadZapato;
     private javax.swing.JButton ColorHogar;
+    private javax.swing.JButton ColorObjetoModificado;
     private javax.swing.JButton ColorRopa;
     private javax.swing.JButton ColorZapato;
     private javax.swing.JFormattedTextField ComodidadZapato;
     private javax.swing.JPasswordField ContraseñaGerente;
     private javax.swing.JTextArea DescripcionHogar;
+    private javax.swing.JTextArea DescripcionObjetoModificado;
     private javax.swing.JTextArea DescripcionRopa;
     private javax.swing.JTextArea DescripcionZapato;
     private javax.swing.JFormattedTextField EdadGerente;
@@ -2081,6 +2132,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField IDPersonal;
     private javax.swing.JTextArea InstruccionesHogar;
     private javax.swing.JTextField MarcaHogar;
+    private javax.swing.JTextField MarcaObjetoModificado;
     private javax.swing.JTextField MarcaRopa;
     private javax.swing.JTextField MarcaZapato;
     private javax.swing.JRadioButton MasculinoGerente;
@@ -2105,6 +2157,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel PanelModificar;
     private javax.swing.JTabbedPane PanelesOpciones;
     private javax.swing.JComboBox<String> PersonaHogar;
+    private javax.swing.JComboBox<String> PersonaObjetoCBModificado;
     private javax.swing.JComboBox<String> PersonaRopa;
     private javax.swing.JComboBox<String> PersonaZapato;
     private javax.swing.JFormattedTextField PesoGerente;
@@ -2119,6 +2172,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> TallaRopa;
     private javax.swing.JFormattedTextField TallaZapato;
     private javax.swing.JComboBox<String> TamañoHogar;
+    private javax.swing.JComboBox<String> TamañoObjetoModificado;
     private javax.swing.JComboBox<String> TamañoRopa;
     private javax.swing.JComboBox<String> TamañoZapato;
     private javax.swing.JTextField TelaRopa;
@@ -2130,11 +2184,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.ButtonGroup buttonGroup5;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2225,7 +2274,5 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
