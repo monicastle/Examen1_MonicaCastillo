@@ -20,7 +20,7 @@ public class Persona {
     private String estadocivil;
     private double altura;
     private double peso;
-    private ArrayList mensajes;
+    private ArrayList<Mensaje> mensajes;
 
     public Persona() {
     }
